@@ -235,13 +235,23 @@ spec:
         app.kubernetes.io/name: factorio
         app.kubernetes.io/part-of: factorio
     spec:
+      initContainers:
+        - name: create-default-save
+          image: docker.pkg.github.com/sjparkinson/factorio/factorio:latest
+          command:
+            - /opt/factorio/bin/x64/factorio
+            - --create
+            - saves/default.zip
+          volumeMounts:
+            - name: saves
+              mountPath: /opt/factorio/saves
       containers:
         - name: factorio
           image: docker.pkg.github.com/sjparkinson/factorio/factorio:latest
           command:
             - /opt/factorio/bin/x64/factorio
-            - --start-server-load-scenario
-            - data/base/freeplay
+            - --start-server
+            - saves/default.zip
             - --use-server-whitelist
             - --server-whitelist
             - /etc/factorio/server-whitelist.json
