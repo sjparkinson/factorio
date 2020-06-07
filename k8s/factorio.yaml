@@ -245,7 +245,7 @@ spec:
             - --use-server-whitelist
             - --server-whitelist
             - /etc/factorio/server-whitelist.json
-            - --admin-whitelist
+            - --server-adminlist
             - /etc/factorio/server-whitelist.json
             - --server-settings
             - /etc/factorio/server-settings.json
