@@ -308,6 +308,6 @@ spec:
       protocol: UDP
       port: 34197
       targetPort: 34197
-      nodePort: 34197
+      nodePort: 31197
   externalIPs:
     - 159.65.212.70
