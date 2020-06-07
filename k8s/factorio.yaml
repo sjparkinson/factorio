@@ -272,9 +272,6 @@ spec:
             requests:
               cpu: 30m
               memory: 128Mi
-          livenessProbe:
-            tcpSocket:
-              port: 34197
       imagePullSecrets:
         - name: github
       volumes:
