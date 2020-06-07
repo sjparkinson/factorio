@@ -241,7 +241,7 @@ spec:
           command:
             - /opt/factorio/bin/x64/factorio
             - --start-server-load-scenario
-            - freeplay
+            - data/base/freeplay
             - --use-server-whitelist
             - --server-whitelist
             - /etc/factorio/server-whitelist.json
