@@ -15,7 +15,7 @@ data:
       "autosave_interval": 15,
 
       "_comment_autosave_slots": "server autosave slots, it is cycled through when the server autosaves.",
-      "autosave_slots": 4,
+      "autosave_slots": 4
     }
   map-settings.json: |
     {
