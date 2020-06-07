@@ -235,16 +235,10 @@ spec:
         app.kubernetes.io/name: factorio
         app.kubernetes.io/part-of: factorio
     spec:
-      initContainers:
-        - name: create-default-save
-          image: docker.pkg.github.com/sjparkinson/factorio/factorio:latest
-          command:
-            - /opt/factorio/bin/x64/factorio
-            - --create
-            - saves/default.zip
-          volumeMounts:
-            - name: saves
-              mountPath: /opt/factorio/saves
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 2000
+        fsGroup: 2000
       containers:
         - name: factorio
           image: docker.pkg.github.com/sjparkinson/factorio/factorio:latest

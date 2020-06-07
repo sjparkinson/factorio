@@ -6,8 +6,8 @@ LABEL \
   maintainer="sam.james.parkinson@gmail.com"
 
 RUN apk --update --no-cache add curl ca-certificates && \
-    addgroup -S factorio && \
-    adduser -S factorio -G factorio && \
+    addgroup -S factorio --gid 2000 && \
+    adduser -S factorio -G factorio --uid 1000 && \
     mkdir -p /opt/factorio/saves && \
     chown -R factorio:factorio /opt/factorio && \
     curl -o /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
